@@ -1,0 +1,15 @@
+{
+  "name": "mirutube",
+  "version": "1.0.0",
+  "description": "A backend-driven YouTube clone designed to replicate and extend the core functionalities of a modern video-sharing platform.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon src/index.js"
+  },
+  "author": "Ayush",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
