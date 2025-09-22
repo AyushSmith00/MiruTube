@@ -3,6 +3,8 @@ import {ApiError} from "../utils/ApiError.js"
 import {User} from "../models/user.model.js"
 import {uplaodOnCloudinary} from "../utils/cloudinary.js"
 import {ApiResponse} from "../utils/ApiResponse.js"
+import jwt from "jsonwebtoken"
+import mongoose from "mongoose";
 
 const generateAccessAndRefreshTokens = async(userId) => {
     try {
@@ -25,15 +27,14 @@ const generateAccessAndRefreshTokens = async(userId) => {
 const registerUser = asyncHandler(async (req, res)=> {
 
 
-    const {fullname, email, username, password} = req.body
-    console.log("email", email);
+    const {fullName, email, username, password} = req.body
 
-    if([fullname, email, password, username].some((field) => 
-        field?.trime() === "")){
+    if([fullName, email, password, username].some((field) => 
+        field?.trim() === "")){
             throw new ApiError(400, "All fields are required")        
     }
 
-    const exixtedUser = User.findOne({
+    const exixtedUser = await User.findOne({
         $or: [{email},{username}]
     })
 
@@ -57,7 +58,7 @@ const registerUser = asyncHandler(async (req, res)=> {
     }
 
     const user = await User.create({
-        fullname,
+        fullName,
         avatar: avatar.url,
         coverImage: coverImage?.url || "",
         email,
