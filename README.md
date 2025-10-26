@@ -6,7 +6,7 @@ MiruTube – A backend-driven YouTube clone built with Node.js, MongoDB, and Clo
 
 🎬 Video Upload & Management – Upload, store, and stream videos seamlessly using Cloudinary for optimized media delivery.
 
-💬 Interactive Features – Like, comment, and subscribe functionalities for an engaging user experience.
+💬 Interactive Features – Like, comment, tweet and subscribe functionalities for an engaging user experience.
 
 📊 Dashboard & Analytics – Track views, subscribers, and engagement metrics in real time.
 
@@ -15,6 +15,4 @@ MiruTube – A backend-driven YouTube clone built with Node.js, MongoDB, and Clo
 ⚙️ Scalable REST API – Built with Express.js for clean, modular, and efficient backend design.
 
 🧰 Tech Stack:
-Node.js • Express.js • MongoDB • Mongoose • Cloudinary • JWT • Multer
-
-Work in progress....
+Nodejs • Express.js • MongoDB • Mongoose • Cloudinary • JWT • Multer
